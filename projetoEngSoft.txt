@@ -1,0 +1,45 @@
+Descrição do sistema
+
+- WebSite para interface com os usuários
+- Banco de dados da rede linux
+
+===================
+Dicionario de dados
+===================
+
+=======================
+Descrição dos Use Cases
+=======================
+
+Caso de uso: Realiza Agendamento
+
+Ator primário: Paciente
+
+Objetivo no contexto: Marcar um horário para consultar um médico de alguma de especialidade. Ele pode cancelar e remarcar consultas já agendadas.
+
+Pré-condições:  O usuário e senha do paciente precisam ser válidos. O sistema deve possuir o cadastro do paciente para permitir o seu acesso.
+
+Trigger: O usuário decide consultar informações sobre seu agendamento.
+
+
+Cenário:
+1. O paciente entra na página linux.ime.usp.br/~imecare
+2. O paciente digita sua identificação e senha (com pelo menos 6 caracteres, sendo pelo menos um deles um caracter especial)
+3. O sistema apresenta um menu para o paciente escolher a função que deseja executar.
+4. O paciente seleciona o botão "Agendamento"
+5. O sistema apresenta uma lista das consultas já marcadas nos últimos 12 meses e um menu com opções "Marcar consulta", "Alterar consulta", "Cancelar consulta".
+6. O paciente seleciona o botão "Marcar consulta". 
+7. O sistema apresenta um formulário para o paciente escolher o hospital, a especialidade, o médico e a data desejada. O resultado pode ser reordenado por médico ou data.
+8. O paciente escolhe dentre as datas, uma que deseje. 
+9. O sistema registra a opção selecionada como uma consulta marcada. Retorna resultado (sucesso, falha).
+10. O paciente seleciona o botão "Alterar consulta".
+11. O sistema apresenta as próximas consultas e permite selecionar a que se deseja alterar.
+12. O paciente seleciona a consulta.
+13. O sistema apresenta a disponibilidade dos médicos e seus respectivos horários.
+14. O paciente pode selecionar uma das opções.
+15. O sistema registra a consulta e retorna o resultado (sucesso, falha)
+16. O paciente seleciona o botão "Cancelar consulta".
+17. O sistema apresenta as próximas consultas e permite selecionar a que se deseja cancelar.
+18. O paciente seleciona a consulta.
+19. O sistema cancela a consulta e retorna o resultado (sucesso, falha)
+
