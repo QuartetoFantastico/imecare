@@ -1,0 +1,71 @@
+//Classes 
+
+UML - classes
+
+Doença
+- ??
+
+Tratamento
+- 
+
+PlanoSaude
+- aceitaTratamento()
+- cobreExame()
+- coberturaConsulta() //para saber se cobre integralmente ou se o paciente paga uma porcentagem
+- coberturaExame()
+
+
+
+Medico
+- prescreveMedicamento
+- realizaDiagnostico
+- indicaTratamento
+- realizaProcedimentos
+- 
+
+
+Procedimentos
+- Cirurgia
+- Exames
+- Internacao
+
+
+
+Paciente
+- confirmaConsulta     \  agendamento interativo
+- alteraDataConsulta   /
+- trocaHospital
+- trocaMedico
+
+
+Consulta
+- createRegisto(nomeMed, nomePaciente, data, historico)
+- displayConsulta()
+
+
+
+Display
+
+- displayDiasDisponiveis()
+- displayMedicamentos()
+- displayRiscos()  //contra-indicações para o paciente, tomar cuidado com medicamentos
+
+Agendamento
+- displayAgendamento()
+
+
+Prontuario
+- displayHistorico()
+- addRegistro()
+- modifyRegistro(private CRM, int numberReg)
+- createProntuario()
+
+
+Medicamento
+- getContraIndicações
+   
+
+   ideias: if(remedioPrescrito infringe contraIndicação)
+   	            displayWarning()
+
+   	          //avisa medico ou enfermeiro sobre os perigos: alergia, contra-indicação, morte (no caso de glicose para diabéticos)
