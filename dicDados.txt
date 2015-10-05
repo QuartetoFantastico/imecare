@@ -1,0 +1,21 @@
+Nome		Descricao		Detalhes
+
+Pessoa		Entidade física		
+Paciente
+Médico
+Hospital
+Prontuário
+Tratamento
+Consulta
+Agendamento
+Histórico	Descrição de todos os dados do paciente		No histórico ficam armazanadas informa
+PlanoSaude
+Exame
+Medicamento
+Diagnostico
+Procedimento
+Cirurgia
+Internacao
+Registro
+Display
+
