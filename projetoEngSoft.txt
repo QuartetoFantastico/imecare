@@ -89,6 +89,93 @@ Cenário:
 18. O paciente seleciona a consulta.
 19. O sistema cancela a consulta e retorna o resultado (sucesso, falha)
 
+Exceções:
+1. Se a identificação e a senha não estiverem corretas, olhe o use case de Validação.
+
+
+Prioridade: Prioridade moderada, pode ser implementado depois das funções básicas.
+
+Quando estará disponível: Segundo incremento
+
+Frequência de uso: Alta frequência
+
+Canal para o ator: Web site
+
+Questões abertas:
+1. O que acontece quando dois pacientes tentam marcar uma mesma data e horário ao mesmo tempo?
+2. O que acontece em caso de queda ou falha ao marcar o agendamento?
+
++++++++++++++++++++++++++++
+Caso de Uso: Validação
+
+Atores: paciente, médico, secretário, enfermeiro
+
+Objetivo no contexto: Validar o acesso ao sistema.
+
+Pré-condições: O ator deve possuir um cadastro no sistema.
+
+Trigger: O ator decide consultar o sistema
+
+Cenário:
+1. O ator entra na página linux.ime.usp.br/~imecare
+2. O sistema apresenta um formulário para que o ator entre com sua identificação e senha.
+3. O ator digita seus dados.
+4. O sistema verifica se os dados são consistentes com o que há no banco de dados.
+5. Caso os dados sejam consistentes, a interação entre o usuário e o sistema é liberada.
+6. Caso contrário, o sistema devolve erro e volta para o segundo item.
+
+
+Prioridade: Alta prioridade
+
+Quando estará disponível: Primeiro incremento
+
+Frequência de uso: Alta frequência
+
+Canal para o ator: Web site
+
+Questões abertas:
+1. O que acontece quando o ator tenta logar no sistema por várias vezes sem sucesso?
+2. Haverá algum sistema de recuperação de identificação/senha?
+
++++++++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++
+Caso de Uso: Leitura de prontuário
+
+Ator primário: médico, enfermeiro e secretário
+
+Objetivo no contexto: Ler as informações contidas no prontuário de um paciente.
+
+Pré-condições: Estar logado no sistema e o paciente possuir um prontuário no sistema.
+
+Trigger: Necessidade de recuperar informações sobre determinado paciente
+
+Cenário:
+1. 
+2.
+
+Exceções:
+1.
+2.
+
+Prioridade:
+
+Quando estará disponível:
+
+Frequência de uso:
+
+Canal para o ator:
+
+Atores secundários:
+
+Canais para os atores secundários:
+
+Questões abertas:
+1.
+2.
+
++++++++++++++++++++++++++++
 
 
 
@@ -150,5 +237,5 @@ Software Quality Attributes
 6. Other Requirements
 
 Appendix A: Glossary
-Appendix B: Anlysis Models
+Appendix B: Analysis Models
 Appendix C: Issues List
