@@ -152,32 +152,54 @@ Pré-condições: Estar logado no sistema e o paciente possuir um prontuário no
 Trigger: Necessidade de recuperar informações sobre determinado paciente
 
 Cenário:
-1. 
-2.
+1. Ver caso de validação
+2. No site, terá um campo de busca por um paciente onde o ator deverá inserir o identificador do paciente.
+3. O sistema mostra o resultado na tela.
 
 Exceções:
-1.
-2.
+1. Prontuário inexistente.
 
-Prioridade:
+Prioridade: Alta
 
-Quando estará disponível:
+Quando estará disponível: Segunda incrementação
 
-Frequência de uso:
+Frequência de uso: Alta
 
-Canal para o ator:
-
-Atores secundários:
-
-Canais para os atores secundários:
-
-Questões abertas:
-1.
-2.
+Canal para o ator: Website
 
 +++++++++++++++++++++++++++
 
++++++++++++++++++++++++++++
+Caso de Uso: Escrita de prontuário
 
+Ator primário: médico, enfermeiro e secretário
+
+Objetivo no contexto: Ler as informações contidas no prontuário de um paciente.
+
+Pré-condições: Estar logado no sistema e o paciente possuir um prontuário no sistema.
+
+Trigger: Necessidade de recuperar informações sobre determinado paciente
+
+Cenário:
+1. Ver caso de validação
+2. No site, terá um campo de busca por um paciente onde o ator deverá inserir o identificador do paciente.
+3. O sistema mostra o resultado na tela e os campos de edição.
+
+Exceções:
+1. O médico tenta modificar um prontuário ao qual não tem acesso.
+
+Prioridade: Alta
+
+Quando estará disponível: Segunda incrementação
+
+Frequência de uso: Alta
+
+Canal para o ator: Website
+
+Questões abertas:
+1. O que acontece se a conexão ou o sistema falha?
+
++++++++++++++++++++++++++++
 
 ++++++++++++++++++++++++++++++++
 3 - Estrutura : Diag. Atividades
