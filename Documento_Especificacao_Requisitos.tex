@@ -1,9 +1,10 @@
-\documentclass[12pt,a4paper]{report}
+\documentclass[11pt,a4paper]{report}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage[brazilian]{babel}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{indentfirst}
 
 \renewcommand\thesection{\arabic{section}}
 
@@ -50,9 +51,9 @@
 
 \newpage
 
-\section{Introdução}
+\chapter*{Introdução}
 
-\subsection{Objetivos deste software}
+\section{Objetivos deste software}
 
 Quando uma pessoa decide tratar algum problema de saúde ou algo similar em um hospital, geralmente seus dados ficam restritos somente àquela unidade ou à sua rede hospitalar. Caso o hospital reconheça que o tratamento em sua unidade não é possível ou algum paciente tenha pretensões de continuar seu tratamento em algum lugar, cabe ao paciente levar consigo suas informações a respeito do diagnóstico e o tratamento a que foi submetido.
 Visando a evitar o trabalho de transporte de informações de forma manual, o desperdício de tempo e de recursos, perda de informações e possíveis ambiguidades em suas interpretações, o sistema a ser desenvolvido neste projeto consiste na unificação de dados hospitalares em relação aos dados dos pacientes: ao diagnóstico, processo do tratamento, medicamentos indicados, estado atual do paciente, etc.
@@ -61,9 +62,9 @@ Visando a evitar o trabalho de transporte de informações de forma manual, o de
 
 
 
-\subsection{Escopo do produto}
+\section{Escopo do produto}
 
-\subsubsection{Nome do produto e seus componentes}
+\subsection{Nome do produto e seus componentes}
 IMECare:
 
 \begin{itemize}
@@ -74,13 +75,13 @@ IMECare:
 \end{itemize}
 
 
-\subsubsection{Descrição do produto}
+\subsection{Descrição do produto}
 
 O produto será utilizado por hospitais e pacientes dos mesmos. Eles terão acesso a uma interface web (pretendemos utilizar um site) e por meio dela conseguirá acessar dados, modificar, checar os agendamentos e realizar alterações de datas, quando desejar.
 
 
 
-\subsubsection{Missão do produto}
+\subsection{Missão do produto}
 
 \begin{itemize}
 
@@ -93,48 +94,48 @@ O produto será utilizado por hospitais e pacientes dos mesmos. Eles terão aces
 
 
 
-\subsection{Siglas e definições}
-
+\section{Siglas e definições}
+\noindent
 \textbf{SGBD} - Sistema Gerenciador de Banco de Dados \\
 \textbf{RG}   - Registro Geral\\
 \textbf{CPF}  - Cadastro de Pessoa Física\\
 
 
 
-\section{Descrição geral do produto (na visão dos usuários)}
+\chapter*{Descrição geral do produto}
 
-\subsection{Perspectiva} 
+\section{Perspectiva} 
 
 Diagramas de caso de uso:
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
   \caption{Caso de uso- Médico}
   \centering
-  \includegraphics[scale=.5]{doctor.png}
+  \includegraphics[scale=.4]{doctor.png}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
   \caption{Caso de uso- Enfermeiro}
   \centering
-  \includegraphics[scale=.5]{nurse.png}
+  \includegraphics[scale=.4]{nurse.png}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
   \caption{Caso de uso- Paciente}
   \centering
-  \includegraphics[scale=.5]{patient.png}
+  \includegraphics[scale=.4]{patient.png}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[ht!]
   \caption{Caso de uso- Secretária}
   \centering
-  \includegraphics[scale=.5]{secretary.png}
+  \includegraphics[scale=.4]{secretary.png}
 \end{figure}
 
 
 \newpage
 
-\subsection{Usuários do sistema}
+\section{Usuários do sistema}
 
 \begin{itemize}
 \item Pacientes: podem acessar suas informações presentes no sistema e agendar/reagendar consultas
@@ -147,12 +148,10 @@ Diagramas de caso de uso:
 
 
 
-\section{Requisitos específicos}
+\chapter*{Requisitos específicos}
 
 
-\subsection{Identificação dos requisitos}
-
-\subsection{Prioridades dos requisitos}
+\section{Prioridades dos requisitos}
 
 Como o projeto é grande, é necessário ter um planejamento e analisar o que é mais prioritário dentre as tarefas que precisam ser realizadas. Abaixo, estão definidos o que significa ser: essencial, importante ou desejável. \\
 
@@ -173,44 +172,55 @@ Podem ser deixados para versões posteriores do sistema, se não der tempo de se
 \end{itemize}
 
 
-\subsection{Descrição dos requisitos}
+\section{Descrição dos requisitos}
 
-\begin{itemize}
-\item \textbf{Gerenciamento dos pacientes}
 
-O sistema precisa prover uma forma dos pacientes se cadastrarem no sistema e acessarem seus dados quando fizerem login.\\
-\\ Os pacientes têm cpf, rg, contato (seja telefone/ endereço), tipo sanguíneo.
-Um paciente pode ter uma ou mais doenças associadas a ele. Cada doença vai gerar um determinado grupo de exames pedidos. Um mesmo exame pode ser pedido para problemas de saúde diferentes e podem ser feitos em laboratórios diferentes.\\
+ \textbf{Gerenciamento dos pacientes}
+\newline
+
+O sistema precisa prover uma forma dos pacientes se cadastrarem no sistema e acessarem seus dados quando fizerem login.
+
+ Os pacientes têm cpf, rg, contato (seja telefone/ endereço), tipo sanguíneo.
+
+Um paciente pode ter uma ou mais doenças associadas a ele. Cada doença vai gerar um determinado grupo de exames pedidos. Um mesmo exame pode ser pedido para problemas de saúde diferentes e podem ser feitos em laboratórios diferentes.
+
 Uma maneira encontrada de armazenar os dados do paciente de forma a conter seu histórico de consultas, exames e informações em geral, foi criar um prontuário que conterá um conjunto de registros sobre os mais diversos conteúdos relacionados ao paciente. 
-Assim, tudo isso poderá ser visto através do prontuário do paciente que está consultando o sistema. \\
-Além disso, o sistema deve possibilitar consultar quais serão as datas/horários das próximas consultas e, além disso, permitir alteração das datas (caso o paciente deseje e os médicos tenham aqueles dias disponíveis para atendimento).
 
-\item \textbf{Gerenciamento dos funcionários}
+Assim, tudo isso poderá ser visto através do prontuário do paciente que está consultando o sistema. 
+
+Além disso, o sistema deve possibilitar consultar quais serão as datas/horários das próximas consultas e, além disso, permitir alteração das datas (caso o paciente deseje e os médicos tenham aqueles dias disponíveis para atendimento).
+\newline
+
+\textbf{Gerenciamento dos funcionários}
+\newline
 
 Como funcionários o sistema terá: médicos, enfermeiros e secretários.
+
 Eles têm cpf, rg, contato (seja telefone/ endereço), unidade(s) em que trabalham, já que o sistema integra mais de um hospital.
+
 No caso do médico, outro atributo é a especialidade em que trabalha.
 
-Os médicos devem poder acessar o sistema, consultar e modificar dados dos pacientes. \\
-Quando ocorre uma consulta, o médico pode realizar diagnóstico, fazer prescrições e/o analisar os exames. Com base nisso, o médico receita medicamentos numa determinada dose. Os medicamentos podem trazer uma melhoria no quadro do paciente ou não surtirem muito efeito. Isso deve ser registrado, pois pode haver troca do medicamento. Assim, os médicos devem adicionar registros ao prontuário do paciente quando houver alguma consulta. \\
+Os médicos devem poder acessar o sistema, consultar e modificar dados dos pacientes. 
+
+Quando ocorre uma consulta, o médico pode realizar diagnóstico, fazer prescrições e/o analisar os exames. Com base nisso, o médico receita medicamentos numa determinada dose. Os medicamentos podem trazer uma melhoria no quadro do paciente ou não surtirem muito efeito. Isso deve ser registrado, pois pode haver troca do medicamento. Assim, os médicos devem adicionar registros ao prontuário do paciente quando houver alguma consulta. 
 
 
-Os enfermeiros podem apenas consultar informações dos pacientes em que atende. \\
+Os enfermeiros podem apenas consultar informações dos pacientes em que atende. 
+
+
+
 Os secretários são responsáveis pela parte de agendamento das consultas.
 
-\end{itemize}
 
 
 
-\subsection{Requisitos Funcionais}
 
-\begin{center}
-\textbf{=======================\\
-Descrição dos Use Cases\\
-=======================\\}
-\end{center}
+\chapter*{Requisitos Funcionais}
 
-\subsubsection{<<<<<<Caso de uso: Realiza Agendamento>>>>>>} 
+\section{Descrição dos Use Cases}
+
+
+\subsection{Caso de uso: Realiza Agendamento} 
 
 \textbf{Ator primário:} Paciente \newline
 
@@ -266,7 +276,7 @@ Descrição dos Use Cases\\
 
 
 
-\subsubsection{<<<<<<Caso de Uso: Validação>>>>>>}
+\subsection{Caso de Uso: Validação}
 
 \textbf{Atores:} paciente, médico, secretário, enfermeiro\\
 
@@ -304,7 +314,7 @@ Descrição dos Use Cases\\
 
 
 
-\subsubsection{<<<<<<Caso de Uso: Leitura de prontuário>>>>>>}
+\subsection{Caso de Uso: Leitura de prontuário}
 
 \textbf{Ator primário:} médico, enfermeiro e secretário\\
 
@@ -334,7 +344,7 @@ Descrição dos Use Cases\\
 \textbf{Canal para o ator:} Website\\
 
 
-\subsubsection{<<<<<<<<Caso de Uso: Escrita de prontuário>>>>>>}
+\subsection{Caso de Uso: Escrita de prontuário}
 
 \textbf{Ator primário:} médico, enfermeiro e secretário\\
 
@@ -365,11 +375,11 @@ Descrição dos Use Cases\\
 
 
 
-\subsection{Requisitos não-funcionais}
+\chapter*{Requisitos não-funcionais}
 
 \begin{itemize}
 
-\item \textbf{Interface Amigável:} 
+\item \textbf{Interface Amigável} 
 
 \textbf{Descrição:} O sistema deve apresentar uma interface intuitiva para os usuários do sistema, com menus e botões que facilitem a navegabilidade pelo sistema.
 Além disso, ser user-friendly é importante, visto que o sistema não pode exigir conhecimentos avançados de informática. A integração de hospitais visa atender o público em geral e, portanto, tanto o vocabulário do site, quanto o modo de uso, não deve ser complexo. 
@@ -391,6 +401,10 @@ Além disso, ser user-friendly é importante, visto que o sistema não pode exig
 \textbf{Prioridade:} importante
 
 \end{itemize}
+
+\section*{Observações}
+
+As descrições de casos de uso já estão inclusos neste documento.
 
 
 \end{document}
